@@ -26,11 +26,20 @@
     );
 
 
-    $id = int($_POST['id']);
+    $id = $_GET['id'];
 
     $state = exec("gpio read ".$pins[$id]);
 
+    // Crée une variable avec la valeur inverse de la valeur actuelle du pin
+    if (intval($state)) {
+        $bool = 0;
+    }else{
+        $bool = 1;
+    }
+    
     //Definis le PIN en tant que sortie
     system("gpio mode ".$pins[$id]." out");
     //Active/désactive le pin (en mettant l'inverse de l'état actuel)
-    system("gpio write ".$pins[$id]." ".!$state);
+    system("gpio write ".$pins[$id]." ".$bool);
+
+

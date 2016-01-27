@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td class="id_td">
-                    1
+                    11
                 </td>
                 <td>
                     Entrée
@@ -39,7 +39,7 @@
                 </td>
             </tr><tr>
                 <td class="id_td">
-                    2
+                    15
                 </td>
                 <td>
                     Salon
@@ -51,7 +51,7 @@
                 </td>
             </tr><tr>
                 <td class="id_td">
-                    3
+                    7
                 </td>
                 <td>
                     Chambre
@@ -71,9 +71,7 @@
         $('.switch').on('click', function(){
             var id = parseInt($(this).parent().parent().find('.id_td').html());
             $.ajax({
-                url: './process/switch.php',
-                method: 'POST',
-                data : {id : id}
+                url: './process/switch.php?id='+id
             });
             if ($(this).hasClass('bg-danger')){
                 $(this).addClass('bg-success');
