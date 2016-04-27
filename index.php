@@ -43,7 +43,7 @@
 					</header>
 
 					<div class="control_panel">
-						<table>
+						<table class="table-responsive">
 							<tr>
 								<td id="entree" class="bg-dangerX">Entrée</td>
 								<td id="salon" class="bg-dangerX">Salon</td>
